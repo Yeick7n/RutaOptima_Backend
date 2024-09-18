@@ -7,12 +7,15 @@ import { AuthModule } from './auth/auth.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { EmailModule } from './email/email.module';
 import { RutasModule } from './rutas/rutas.module';
+import { ConfigModule } from '@nestjs/config';
 // import { CargarDatosService } from './cargar-datos/cargar-datos.service';
 // import { CargarDatosModule } from './cargar-datos/cargar-datos.module';
 
 
 @Module({
-  imports: [TypeOrmModule.forRoot({
+  imports: [
+    ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
+    TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',
     port: 3306,

@@ -43,7 +43,7 @@ export class AuthService {
       newUser.email,
       'CONFIRMACIÓN DE EMAIL',
       `Hola ${newUser.user}, \n\n Te damos la bienvenida a RutaOptima, gracias por registrarte en la plataforma.\n
-      Por favor, confirma tu correo haciendo clic en el siguiente enlace: http://localhost:3000/auth/confirmar/${confirmToken}`,
+      Por favor, confirma tu correo haciendo clic en el siguiente enlace: http://localhost:3000/confirmar/${confirmToken}`,
     );
 
     return newUser;

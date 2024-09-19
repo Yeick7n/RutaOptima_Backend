@@ -6,27 +6,35 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { EmailModule } from './email/email.module';
-import { RutasModule } from './rutas/rutas.module';
 import { ConfigModule } from '@nestjs/config';
-// import { CargarDatosService } from './cargar-datos/cargar-datos.service';
-// import { CargarDatosModule } from './cargar-datos/cargar-datos.module';
-
+import { CargueArchivoModule } from './cargue-archivo/cargue-archivo.module';
+import { UbicacionModule } from './ubicacion/ubicacion.module';
+import { ConexionModule } from './conexion/conexion.module';
+import { InicioModule } from './inicio/inicio.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
     TypeOrmModule.forRoot({
-    type: 'mysql',
-    host: 'localhost',
-    port: 3306,
-    username: 'root',
-    password: '1234567890',
-    database: 'ruta-optima',
-    entities: [__dirname + '/**/*.entity{.ts,.js}'],
-    synchronize: true, 
-
-  }), AuthModule, UsuariosModule, EmailModule, RutasModule,], // CargarDatosModule],
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: '1234567890',
+      database: 'ruta-optima',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true,
+    }),
+    AuthModule,
+    UsuariosModule,
+    EmailModule,
+    CargueArchivoModule,
+    UbicacionModule,
+    ConexionModule,
+    InicioModule,
+    CargueArchivoModule,
+  ], 
   controllers: [AppController],
-  providers: [AppService], // CargarDatosService],
+  providers: [AppService], 
 })
 export class AppModule {}

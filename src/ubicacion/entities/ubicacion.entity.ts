@@ -1,15 +1,13 @@
 /* eslint-disable prettier/prettier */
-
+import { Conexion } from "src/conexion/entities/conexion.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Conexion } from "./conexion.entity";
 
 @Entity()
 export class Ubicacion {
-
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ unique: true })
+    @Column({ unique: true})
     nombre: string;
 
     @Column()
@@ -19,8 +17,8 @@ export class Ubicacion {
     posY: number;
 
     @OneToMany(() => Conexion, (conexion) => conexion.ubicacion1)
-    conexion1: Conexion[];
+    inicio: Conexion[];
 
     @OneToMany(() => Conexion, (conexion) => conexion.ubicacion2)
-    conexion2: Conexion[];
+    fin: Conexion[];
 }

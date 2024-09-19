@@ -1,15 +1,13 @@
 /* eslint-disable prettier/prettier */
+import { Ubicacion } from "src/ubicacion/entities/ubicacion.entity";
 import { Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Ubicacion } from "./ubicacion.entity";
-
 
 @Entity()
 export class Inicio {
-
     @PrimaryGeneratedColumn()
-    id: number
+    id: number;
 
     @OneToOne(() => Ubicacion)
     @JoinColumn()
-    inicio: Ubicacion
+    inicio: Ubicacion;
 }

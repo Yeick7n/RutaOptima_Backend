@@ -7,7 +7,7 @@ export class Inicio {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToOne(() => Ubicacion)
+    @OneToOne(() => Ubicacion, {eager: true})
     @JoinColumn()
     inicio: Ubicacion;
 }

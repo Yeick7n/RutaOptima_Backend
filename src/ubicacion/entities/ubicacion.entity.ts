@@ -16,9 +16,9 @@ export class Ubicacion {
     @Column()
     posY: number;
 
-    @OneToMany(() => Conexion, (conexion) => conexion.ubicacion1)
+    @OneToMany(() => Conexion, (conexion) => conexion.ubicacion1, { eager: true })
     inicio: Conexion[];
 
-    @OneToMany(() => Conexion, (conexion) => conexion.ubicacion2)
+    @OneToMany(() => Conexion, (conexion) => conexion.ubicacion2, { eager: true })
     fin: Conexion[];
 }

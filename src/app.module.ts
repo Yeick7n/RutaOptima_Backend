@@ -11,6 +11,7 @@ import { CargueArchivoModule } from './cargue-archivo/cargue-archivo.module';
 import { UbicacionModule } from './ubicacion/ubicacion.module';
 import { ConexionModule } from './conexion/conexion.module';
 import { InicioModule } from './inicio/inicio.module';
+import { RutaCortaModule } from './ruta-corta/ruta-corta.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { InicioModule } from './inicio/inicio.module';
     ConexionModule,
     InicioModule,
     CargueArchivoModule,
+    RutaCortaModule,
   ], 
   controllers: [AppController],
   providers: [AppService], 

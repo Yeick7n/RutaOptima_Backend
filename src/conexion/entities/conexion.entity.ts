@@ -11,9 +11,9 @@ export class Conexion {
   @Column()
   peso: number;
 
-  @ManyToOne(() => Ubicacion, (ubicacion) => ubicacion.inicio)
+  @ManyToOne(() => Ubicacion, (ubicacion) => ubicacion.inicio, {eager: true})
   ubicacion1: Ubicacion;
 
-  @ManyToOne(() => Ubicacion, (ubicacion) => ubicacion.fin)
+  @ManyToOne(() => Ubicacion, (ubicacion) => ubicacion.fin, {eager: true})
   ubicacion2: Ubicacion;
 }

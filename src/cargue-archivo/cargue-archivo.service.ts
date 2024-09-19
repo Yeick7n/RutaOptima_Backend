@@ -3,11 +3,6 @@ import { Injectable } from '@nestjs/common';
 import { ConexionService } from 'src/conexion/conexion.service';
 import { InicioService } from 'src/inicio/inicio.service';
 import { UbicacionService } from 'src/ubicacion/ubicacion.service';
-// import { InjectRepository } from '@nestjs/typeorm';
-// import { Conexion } from 'src/conexion/entities/conexion.entity';
-// import { Inicio } from 'src/inicio/entities/inicio.entity';
-// import { Ubicacion } from 'src/ubicacion/entities/ubicacion.entity';
-// import { Repository } from 'typeorm';
 
 @Injectable()
 export class CargueArchivoService {
@@ -15,15 +10,6 @@ export class CargueArchivoService {
     private readonly ubicacionService: UbicacionService,
     private readonly conexionService: ConexionService,
     private readonly inicioService: InicioService,
-
-    // @InjectRepository(Ubicacion)
-    // private ubicacionRepository: Repository<Ubicacion>,
-
-    // @InjectRepository(Conexion)
-    // private conexionRepository: Repository<Conexion>,
-
-    // @InjectRepository(Inicio)
-    // private inicioRepository: Repository<Inicio>,
   ) {}
 
   async processJson(file: Express.Multer.File): Promise<string> {
